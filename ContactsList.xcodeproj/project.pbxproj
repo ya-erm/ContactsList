@@ -7,27 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		823D9D561E44AA4700A4494B /* KGContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D551E44AA4700A4494B /* KGContact.m */; };
+		823D9D591E44AA8A00A4494B /* KGContact+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D581E44AA8A00A4494B /* KGContact+Mapping.m */; };
+		823D9D5B1E44AB5200A4494B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823D9D5A1E44AB5200A4494B /* Realm.framework */; };
 		825B10E11E449723001879B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 825B10E01E449723001879B7 /* main.m */; };
 		825B10E41E449723001879B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 825B10E31E449723001879B7 /* AppDelegate.m */; };
-		825B10E71E449723001879B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825B10E61E449723001879B7 /* ViewController.m */; };
 		825B10EA1E449723001879B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825B10E81E449723001879B7 /* Main.storyboard */; };
 		825B10EC1E449723001879B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 825B10EB1E449723001879B7 /* Assets.xcassets */; };
 		825B10EF1E449723001879B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825B10ED1E449723001879B7 /* LaunchScreen.storyboard */; };
-		C827C10EE5828EC12F365748 /* libPods-ContactsList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B234299A7772F44BA27D1C /* libPods-ContactsList.a */; };
+		82EE928A1E44A33000292291 /* KGNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EE92891E44A33000292291 /* KGNetworkService.m */; };
+		82EE92901E44A4C800292291 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EE928F1E44A4C800292291 /* ContactsViewController.m */; };
+		82EE92961E44A5B700292291 /* KGContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EE92951E44A5B700292291 /* KGContactCell.m */; };
+		C4563807721539065193B64B /* libPods-ContactsList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64461A9AB3356CF57A183B0E /* libPods-ContactsList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		24B234299A7772F44BA27D1C /* libPods-ContactsList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ContactsList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64461A9AB3356CF57A183B0E /* libPods-ContactsList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ContactsList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		823D9D541E44AA4700A4494B /* KGContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGContact.h; sourceTree = "<group>"; };
+		823D9D551E44AA4700A4494B /* KGContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGContact.m; sourceTree = "<group>"; };
+		823D9D571E44AA8A00A4494B /* KGContact+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KGContact+Mapping.h"; sourceTree = "<group>"; };
+		823D9D581E44AA8A00A4494B /* KGContact+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KGContact+Mapping.m"; sourceTree = "<group>"; };
+		823D9D5A1E44AB5200A4494B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		825B10DC1E449723001879B7 /* ContactsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		825B10E01E449723001879B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		825B10E21E449723001879B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		825B10E31E449723001879B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		825B10E51E449723001879B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		825B10E61E449723001879B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		825B10E91E449723001879B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		825B10EB1E449723001879B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		825B10EE1E449723001879B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		825B10F01E449723001879B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82EE92881E44A33000292291 /* KGNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGNetworkService.h; sourceTree = "<group>"; };
+		82EE92891E44A33000292291 /* KGNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGNetworkService.m; sourceTree = "<group>"; };
+		82EE928E1E44A4C800292291 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsViewController.h; path = ../ContactsViewController.h; sourceTree = "<group>"; };
+		82EE928F1E44A4C800292291 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsViewController.m; path = ../ContactsViewController.m; sourceTree = "<group>"; };
+		82EE92941E44A5B700292291 /* KGContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGContactCell.h; sourceTree = "<group>"; };
+		82EE92951E44A5B700292291 /* KGContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGContactCell.m; sourceTree = "<group>"; };
 		BAC7AF681B160ED6E4193DBC /* Pods-ContactsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsList/Pods-ContactsList.release.xcconfig"; sourceTree = "<group>"; };
 		F726B0E4331BA95AA44F2E38 /* Pods-ContactsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsList/Pods-ContactsList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,7 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C827C10EE5828EC12F365748 /* libPods-ContactsList.a in Frameworks */,
+				823D9D5B1E44AB5200A4494B /* Realm.framework in Frameworks */,
+				C4563807721539065193B64B /* libPods-ContactsList.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,7 +62,8 @@
 		4EF7F7E9184EE4CD9050DF88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				24B234299A7772F44BA27D1C /* libPods-ContactsList.a */,
+				823D9D5A1E44AB5200A4494B /* Realm.framework */,
+				64461A9AB3356CF57A183B0E /* libPods-ContactsList.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -73,14 +89,18 @@
 		825B10DE1E449723001879B7 /* ContactsList */ = {
 			isa = PBXGroup;
 			children = (
-				825B10E21E449723001879B7 /* AppDelegate.h */,
-				825B10E31E449723001879B7 /* AppDelegate.m */,
-				825B10E51E449723001879B7 /* ViewController.h */,
-				825B10E61E449723001879B7 /* ViewController.m */,
+				82EE92881E44A33000292291 /* KGNetworkService.h */,
+				82EE92891E44A33000292291 /* KGNetworkService.m */,
+				823D9D541E44AA4700A4494B /* KGContact.h */,
+				823D9D551E44AA4700A4494B /* KGContact.m */,
+				82EE92941E44A5B700292291 /* KGContactCell.h */,
+				82EE92951E44A5B700292291 /* KGContactCell.m */,
+				823D9D571E44AA8A00A4494B /* KGContact+Mapping.h */,
+				823D9D581E44AA8A00A4494B /* KGContact+Mapping.m */,
+				82EE928E1E44A4C800292291 /* ContactsViewController.h */,
+				82EE928F1E44A4C800292291 /* ContactsViewController.m */,
 				825B10E81E449723001879B7 /* Main.storyboard */,
 				825B10EB1E449723001879B7 /* Assets.xcassets */,
-				825B10ED1E449723001879B7 /* LaunchScreen.storyboard */,
-				825B10F01E449723001879B7 /* Info.plist */,
 				825B10DF1E449723001879B7 /* Supporting Files */,
 			);
 			name = ContactsList;
@@ -90,7 +110,11 @@
 		825B10DF1E449723001879B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				825B10E21E449723001879B7 /* AppDelegate.h */,
+				825B10E31E449723001879B7 /* AppDelegate.m */,
+				825B10F01E449723001879B7 /* Info.plist */,
 				825B10E01E449723001879B7 /* main.m */,
+				825B10ED1E449723001879B7 /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -113,6 +137,7 @@
 			buildPhases = (
 				94675B87F2E119CF8315C4CF /* [CP] Check Pods Manifest.lock */,
 				825B10D81E449723001879B7 /* Sources */,
+				823D9D5C1E44AB6300A4494B /* Copy Carthage Frameworks */,
 				825B10D91E449723001879B7 /* Frameworks */,
 				825B10DA1E449723001879B7 /* Resources */,
 				F9625D3DF33933AABD167959 /* [CP] Embed Pods Frameworks */,
@@ -189,6 +214,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContactsList/Pods-ContactsList-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		823D9D5C1E44AB6300A4494B /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		94675B87F2E119CF8315C4CF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,8 +266,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				825B10E71E449723001879B7 /* ViewController.m in Sources */,
+				823D9D591E44AA8A00A4494B /* KGContact+Mapping.m in Sources */,
+				823D9D561E44AA4700A4494B /* KGContact.m in Sources */,
+				82EE92961E44A5B700292291 /* KGContactCell.m in Sources */,
+				82EE92901E44A4C800292291 /* ContactsViewController.m in Sources */,
 				825B10E41E449723001879B7 /* AppDelegate.m in Sources */,
+				82EE928A1E44A33000292291 /* KGNetworkService.m in Sources */,
 				825B10E11E449723001879B7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +391,10 @@
 			baseConfigurationReference = F726B0E4331BA95AA44F2E38 /* Pods-ContactsList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CpntactsList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KG.ContactsList;
@@ -359,6 +407,10 @@
 			baseConfigurationReference = BAC7AF681B160ED6E4193DBC /* Pods-ContactsList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CpntactsList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KG.ContactsList;

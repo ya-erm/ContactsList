@@ -1,15 +1,13 @@
 //
-//  ViewController.h
-//  CpntactsList
+//  KGContact.m
+//  ContactsList
 //
 //  Created by Ярослав Ермилов on 03.02.17.
 //  Copyright © 2017 Kilograpp. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "KGContact.h"
 
-@interface ViewController : UIViewController
-
+@implementation KGContact
 
 @end
-
