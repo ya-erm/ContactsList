@@ -10,6 +10,9 @@
 #import "KGcontactCell.h"
 #import "KGNetworkService.h"
 #import "ContactsViewController.h"
+#import "ContactDetailsViewController.h"
+
+static NSString *const kShowContactDetailsSegueIdentifier = @"showContactDetailsSegueIdentifier";
 
 @interface ContactsViewController ()
 
@@ -62,6 +65,13 @@
      }];
 }
 
+#pragma mark - Actions
+
+- (IBAction)addContactAction:(id)sender {
+    [self addContact];
+}
+
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -71,9 +81,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     KGContactCell *cell = [tableView dequeueReusableCellWithIdentifier:[KGContactCell getIdentifier] forIndexPath:indexPath];
-    
-    [cell configureWithObject:self.contacts[indexPath.row]];
-    
+        [cell configureWithObject:self.contacts[indexPath.row]];
     return cell;
 }
 
@@ -96,11 +104,17 @@
     return @[deleteAction];
 }
 
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:kShowContactDetailsSegueIdentifier sender:self.contacts[indexPath.row]];
+}
 
-#pragma mark - Actions
+#pragma mark - Navigation
 
-- (IBAction)addContactAction:(id)sender {
-    [self addContact];
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:kShowContactDetailsSegueIdentifier]) {
+        ContactDetailsViewController *controller = segue.destinationViewController;
+        controller.contact = sender;
+    }
 }
 
 @end

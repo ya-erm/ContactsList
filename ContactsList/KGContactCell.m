@@ -8,6 +8,7 @@
 
 #import "KGContactCell.h"
 
+
 @implementation KGContactCell
 
 + (NSString*)getIdentifier{
@@ -22,8 +23,7 @@
 
 - (void)configureWithObject:(KGContact *)contact{
     self.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:contact.photoUrl]]];
-    self.fullNameLabel.text = [NSString stringWithFormat:@"%@ %@", contact.firstName, contact.lastName];
-    
+    self.fullNameLabel.text = contact.fullName;
 }
 
 @end

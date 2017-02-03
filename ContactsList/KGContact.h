@@ -20,4 +20,8 @@
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, strong) NSDate *birthday;
 
+@property (nonatomic, assign, readonly) NSInteger ages;
+@property (nonatomic, copy, readonly) NSString *agesString;
+@property (nonatomic, copy, readonly) NSString *fullName;
+
 @end
