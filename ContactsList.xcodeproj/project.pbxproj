@@ -13,10 +13,12 @@
 		825B10EA1E449723001879B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825B10E81E449723001879B7 /* Main.storyboard */; };
 		825B10EC1E449723001879B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 825B10EB1E449723001879B7 /* Assets.xcassets */; };
 		825B10EF1E449723001879B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825B10ED1E449723001879B7 /* LaunchScreen.storyboard */; };
+		C827C10EE5828EC12F365748 /* libPods-ContactsList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B234299A7772F44BA27D1C /* libPods-ContactsList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		825B10DC1E449723001879B7 /* CpntactsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CpntactsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24B234299A7772F44BA27D1C /* libPods-ContactsList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ContactsList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		825B10DC1E449723001879B7 /* ContactsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		825B10E01E449723001879B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		825B10E21E449723001879B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		825B10E31E449723001879B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		825B10EB1E449723001879B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		825B10EE1E449723001879B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		825B10F01E449723001879B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAC7AF681B160ED6E4193DBC /* Pods-ContactsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsList/Pods-ContactsList.release.xcconfig"; sourceTree = "<group>"; };
+		F726B0E4331BA95AA44F2E38 /* Pods-ContactsList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsList/Pods-ContactsList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,29 +37,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C827C10EE5828EC12F365748 /* libPods-ContactsList.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EF7F7E9184EE4CD9050DF88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24B234299A7772F44BA27D1C /* libPods-ContactsList.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		825B10D31E449723001879B7 = {
 			isa = PBXGroup;
 			children = (
-				825B10DE1E449723001879B7 /* CpntactsList */,
+				825B10DE1E449723001879B7 /* ContactsList */,
 				825B10DD1E449723001879B7 /* Products */,
+				FAE6BA2352ACA232F6F0950B /* Pods */,
+				4EF7F7E9184EE4CD9050DF88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		825B10DD1E449723001879B7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				825B10DC1E449723001879B7 /* CpntactsList.app */,
+				825B10DC1E449723001879B7 /* ContactsList.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		825B10DE1E449723001879B7 /* CpntactsList */ = {
+		825B10DE1E449723001879B7 /* ContactsList */ = {
 			isa = PBXGroup;
 			children = (
 				825B10E21E449723001879B7 /* AppDelegate.h */,
@@ -68,6 +83,7 @@
 				825B10F01E449723001879B7 /* Info.plist */,
 				825B10DF1E449723001879B7 /* Supporting Files */,
 			);
+			name = ContactsList;
 			path = CpntactsList;
 			sourceTree = "<group>";
 		};
@@ -79,24 +95,36 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FAE6BA2352ACA232F6F0950B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F726B0E4331BA95AA44F2E38 /* Pods-ContactsList.debug.xcconfig */,
+				BAC7AF681B160ED6E4193DBC /* Pods-ContactsList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		825B10DB1E449723001879B7 /* CpntactsList */ = {
+		825B10DB1E449723001879B7 /* ContactsList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 825B10F31E449723001879B7 /* Build configuration list for PBXNativeTarget "CpntactsList" */;
+			buildConfigurationList = 825B10F31E449723001879B7 /* Build configuration list for PBXNativeTarget "ContactsList" */;
 			buildPhases = (
+				94675B87F2E119CF8315C4CF /* [CP] Check Pods Manifest.lock */,
 				825B10D81E449723001879B7 /* Sources */,
 				825B10D91E449723001879B7 /* Frameworks */,
 				825B10DA1E449723001879B7 /* Resources */,
+				F9625D3DF33933AABD167959 /* [CP] Embed Pods Frameworks */,
+				0E106961FA6E2342B9305F14 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CpntactsList;
+			name = ContactsList;
 			productName = CpntactsList;
-			productReference = 825B10DC1E449723001879B7 /* CpntactsList.app */;
+			productReference = 825B10DC1E449723001879B7 /* ContactsList.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +142,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 825B10D71E449723001879B7 /* Build configuration list for PBXProject "CpntactsList" */;
+			buildConfigurationList = 825B10D71E449723001879B7 /* Build configuration list for PBXProject "ContactsList" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -127,7 +155,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				825B10DB1E449723001879B7 /* CpntactsList */,
+				825B10DB1E449723001879B7 /* ContactsList */,
 			);
 		};
 /* End PBXProject section */
@@ -144,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E106961FA6E2342B9305F14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContactsList/Pods-ContactsList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94675B87F2E119CF8315C4CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F9625D3DF33933AABD167959 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ContactsList/Pods-ContactsList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		825B10D81E449723001879B7 /* Sources */ = {
@@ -268,22 +344,24 @@
 		};
 		825B10F41E449723001879B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F726B0E4331BA95AA44F2E38 /* Pods-ContactsList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CpntactsList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KG.CpntactsList;
+				PRODUCT_BUNDLE_IDENTIFIER = KG.ContactsList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		825B10F51E449723001879B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAC7AF681B160ED6E4193DBC /* Pods-ContactsList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CpntactsList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KG.CpntactsList;
+				PRODUCT_BUNDLE_IDENTIFIER = KG.ContactsList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -291,7 +369,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		825B10D71E449723001879B7 /* Build configuration list for PBXProject "CpntactsList" */ = {
+		825B10D71E449723001879B7 /* Build configuration list for PBXProject "ContactsList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				825B10F11E449723001879B7 /* Debug */,
@@ -300,13 +378,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		825B10F31E449723001879B7 /* Build configuration list for PBXNativeTarget "CpntactsList" */ = {
+		825B10F31E449723001879B7 /* Build configuration list for PBXNativeTarget "ContactsList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				825B10F41E449723001879B7 /* Debug */,
 				825B10F51E449723001879B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
