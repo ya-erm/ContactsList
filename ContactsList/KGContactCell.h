@@ -20,3 +20,7 @@
 
 
 @end
+
+
+
+//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:www.myurl.com"]];

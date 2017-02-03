@@ -114,7 +114,6 @@
 				823D9D7E1E44DEE500A4494B /* Assets.xcassets */,
 				825B10DF1E449723001879B7 /* Supporting Files */,
 			);
-			name = ContactsList;
 			path = ContactsList;
 			sourceTree = "<group>";
 		};

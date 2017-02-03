@@ -15,5 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 
+- (IBAction)saveAction:(id)sender;
 
 @end

@@ -37,19 +37,26 @@
         case 0:
         param = @"Имя";
         value = self.contact.firstName;
+//                cell.callBackBlock = {
+//                    self.contact.firstName = value;
+//                }
         break; case 1:
         param = @"Фамилия";
-        value = self.contact.lastName;
+                value = self.contact.lastName;
+//                cell.callBackBlock = {
+//                    self.contact.lastName = value;
+//                }
         break; case 2:
-        param = @"Возраст";       
+        param = @"Возраст";
         value = self.contact.agesString;
         break; case 3:
         param = @"E-mail";
         value = self.contact.email;
-        cell.valueTextField.enabled = NO;
+        cell.valueTextField.textColor = [UIColor blueColor];
         break; case 4:
         param = @"Телефон";
         value = self.contact.phone;
+        cell.valueTextField.textColor = [UIColor blueColor];
         break; case 5:
         param = @"Никнейм";
         value = self.contact.nickname;
@@ -59,7 +66,11 @@
         cell.valueTextField.secureTextEntry = YES;
         cell.buttonShowPassword.hidden = NO;
         break;
+                
     }
+    NSString* key =  @"phone";
+    NSString* phonval = (NSString *)[self.contact valueForKey:key];
+
     cell.parametherLabel.text = param;
     cell.valueTextField.placeholder = value;
     cell.valueTextField.text = value;
@@ -75,5 +86,19 @@
     // Pass the selected object to the new view controller.
 }
 
+
+#pragma mark - Actions
+
+- (IBAction)saveAction:(id)sender {
+    
+    //TODO Пам-пам-пам
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm addObject:self.contact];
+    [realm commitWriteTransaction];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

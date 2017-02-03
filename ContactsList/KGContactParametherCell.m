@@ -8,6 +8,7 @@
 
 #import "KGContactParametherCell.h"
 
+
 @implementation KGContactParametherCell
 
 + (NSString*)getIdentifier {
@@ -20,6 +21,7 @@
 }
 
 - (IBAction)showwPaswordAction:(id)sender {
+    self.buttonShowPassword.imageView.tintColor = self.valueTextField.secureTextEntry? [UIColor blackColor] : [UIColor blueColor];
     self.valueTextField.secureTextEntry = !self.valueTextField.secureTextEntry;
 }
 

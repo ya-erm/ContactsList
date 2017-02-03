@@ -39,17 +39,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcx-8O-3Rt">
-                                <rect key="frame" x="317" y="609" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wcx-8O-3Rt" secondAttribute="height" multiplier="1:1" id="99W-hB-RHQ"/>
-                                    <constraint firstAttribute="width" constant="50" id="joM-jG-V1E"/>
-                                </constraints>
-                                <state key="normal" image="plus_button"/>
-                                <connections>
-                                    <action selector="addContactAction:" destination="PMT-1c-8LG" eventType="touchUpInside" id="9eH-S0-jKf"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Nb-TG-Wie">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,6 +82,17 @@
                                     <outlet property="delegate" destination="PMT-1c-8LG" id="QMi-pK-n28"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcx-8O-3Rt">
+                                <rect key="frame" x="307" y="599" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wcx-8O-3Rt" secondAttribute="height" multiplier="1:1" id="99W-hB-RHQ"/>
+                                    <constraint firstAttribute="width" constant="60" id="joM-jG-V1E"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="plus_button"/>
+                                <connections>
+                                    <action selector="addContactAction:" destination="PMT-1c-8LG" eventType="touchUpInside" id="9eH-S0-jKf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeQ-mR-Cq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="159"/>
+            <point key="canvasLocation" x="496.80000000000001" y="158.77061469265368"/>
         </scene>
         <!--Контакт-->
         <scene sceneID="dft-PL-sDU">
@@ -128,7 +128,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yXm-gT-4Wv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yXm-gT-4Wv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="6j5-AI-5Hc">
@@ -213,6 +213,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Контакт" id="Af2-rI-HKR">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="MfI-De-mfn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="ptF-0a-vHl">
+                            <connections>
+                                <action selector="saveAction:" destination="UQf-6k-l7N" id="SWO-iU-PKT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="photo" destination="wdA-Am-QbO" id="MBC-Od-3NB"/>

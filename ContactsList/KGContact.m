@@ -10,17 +10,17 @@
 
 @implementation KGContact
 
--(NSString*)fullName{
+- (NSString *)fullName{
     return [NSString stringWithFormat:@"%@ %@", self.firstName, self.lastName];
 }
 
--(NSInteger)ages{
+- (NSInteger)ages{
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *components = [calendar components:NSCalendarUnitYear fromDate:self.birthday toDate:[NSDate date] options:0];
     return components.year;
 }
 
--(NSString*)agesString{
+- (NSString *)agesString{
     NSString *prefix = @"лет";
     switch (self.ages % 10) {
             case 1:
