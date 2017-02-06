@@ -12,6 +12,7 @@
 @interface ContactDetailsViewController : UIViewController <UITableViewDataSource>
 
 @property(nonatomic, strong) KGContact *contact;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 

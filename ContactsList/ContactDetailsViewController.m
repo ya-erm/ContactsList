@@ -22,6 +22,7 @@
     self.navigationItem.title = self.contact.fullName;
     self.photo.layer.cornerRadius = self.photo.frame.size.width/2;
     self.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.contact.photoUrl]]];
+    self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 }
 
 #pragma mark - UITableViewDataSource
@@ -40,7 +41,7 @@
                       ];
     NSString *key = array[indexPath.row][0];
     NSString *title = array[indexPath.row][1];
-    NSString *type = array[indexPath.row][2];
+    CellType type = [KGContactCellBuilder typeByString:array[indexPath.row][2]];
     
     return [KGContactCellBuilder tableView:tableView contact:self.contact cellForKey:key title:title type:type];
     
