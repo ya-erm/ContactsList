@@ -14,12 +14,15 @@
 		823D9D781E44DEC500A4494B /* KGContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D6A1E44DEC500A4494B /* KGContact.m */; };
 		823D9D791E44DEC500A4494B /* KGContact+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D6C1E44DEC500A4494B /* KGContact+Mapping.m */; };
 		823D9D7A1E44DEC500A4494B /* KGContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D6E1E44DEC500A4494B /* KGContactCell.m */; };
-		823D9D7B1E44DEC500A4494B /* KGContactParametherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D701E44DEC500A4494B /* KGContactParametherCell.m */; };
+		823D9D7B1E44DEC500A4494B /* KGContactTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D701E44DEC500A4494B /* KGContactTextFieldCell.m */; };
 		823D9D7C1E44DEC500A4494B /* KGNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D721E44DEC500A4494B /* KGNetworkService.m */; };
 		823D9D7D1E44DEC500A4494B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 823D9D731E44DEC500A4494B /* main.m */; };
 		823D9D7F1E44DEE500A4494B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823D9D7E1E44DEE500A4494B /* Assets.xcassets */; };
 		823D9D821E44DF0000A4494B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823D9D801E44DF0000A4494B /* LaunchScreen.storyboard */; };
 		823D9D851E44DF2600A4494B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823D9D831E44DF2600A4494B /* Main.storyboard */; };
+		8273EAEA1E487B8200F7090D /* KGContactLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8273EAE91E487B8200F7090D /* KGContactLabelCell.m */; };
+		8273EAED1E48800300F7090D /* KGContactPasswordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8273EAEC1E48800300F7090D /* KGContactPasswordCell.m */; };
+		8273EAF11E488E0A00F7090D /* KGContactCellBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8273EAF01E488E0A00F7090D /* KGContactCellBuilder.m */; };
 		82EE92901E44A4C800292291 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82EE928F1E44A4C800292291 /* ContactsViewController.m */; };
 		C4563807721539065193B64B /* libPods-ContactsList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64461A9AB3356CF57A183B0E /* libPods-ContactsList.a */; };
 /* End PBXBuildFile section */
@@ -38,8 +41,8 @@
 		823D9D6C1E44DEC500A4494B /* KGContact+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "KGContact+Mapping.m"; path = "ContactsList/KGContact+Mapping.m"; sourceTree = SOURCE_ROOT; };
 		823D9D6D1E44DEC500A4494B /* KGContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGContactCell.h; path = ContactsList/KGContactCell.h; sourceTree = SOURCE_ROOT; };
 		823D9D6E1E44DEC500A4494B /* KGContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KGContactCell.m; path = ContactsList/KGContactCell.m; sourceTree = SOURCE_ROOT; };
-		823D9D6F1E44DEC500A4494B /* KGContactParametherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGContactParametherCell.h; path = ContactsList/KGContactParametherCell.h; sourceTree = SOURCE_ROOT; };
-		823D9D701E44DEC500A4494B /* KGContactParametherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KGContactParametherCell.m; path = ContactsList/KGContactParametherCell.m; sourceTree = SOURCE_ROOT; };
+		823D9D6F1E44DEC500A4494B /* KGContactTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGContactTextFieldCell.h; path = ContactsList/KGContactTextFieldCell.h; sourceTree = SOURCE_ROOT; };
+		823D9D701E44DEC500A4494B /* KGContactTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KGContactTextFieldCell.m; path = ContactsList/KGContactTextFieldCell.m; sourceTree = SOURCE_ROOT; };
 		823D9D711E44DEC500A4494B /* KGNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KGNetworkService.h; path = ContactsList/KGNetworkService.h; sourceTree = SOURCE_ROOT; };
 		823D9D721E44DEC500A4494B /* KGNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KGNetworkService.m; path = ContactsList/KGNetworkService.m; sourceTree = SOURCE_ROOT; };
 		823D9D731E44DEC500A4494B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ContactsList/main.m; sourceTree = SOURCE_ROOT; };
@@ -47,6 +50,12 @@
 		823D9D811E44DF0000A4494B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ContactsList/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		823D9D841E44DF2600A4494B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ContactsList/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		825B10DC1E449723001879B7 /* ContactsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8273EAE81E487B8200F7090D /* KGContactLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGContactLabelCell.h; sourceTree = "<group>"; };
+		8273EAE91E487B8200F7090D /* KGContactLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGContactLabelCell.m; sourceTree = "<group>"; };
+		8273EAEB1E48800300F7090D /* KGContactPasswordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGContactPasswordCell.h; sourceTree = "<group>"; };
+		8273EAEC1E48800300F7090D /* KGContactPasswordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGContactPasswordCell.m; sourceTree = "<group>"; };
+		8273EAEF1E488E0A00F7090D /* KGContactCellBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGContactCellBuilder.h; sourceTree = "<group>"; };
+		8273EAF01E488E0A00F7090D /* KGContactCellBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGContactCellBuilder.m; sourceTree = "<group>"; };
 		82EE928E1E44A4C800292291 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsViewController.h; path = ../ContactsViewController.h; sourceTree = "<group>"; };
 		82EE928F1E44A4C800292291 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsViewController.m; path = ../ContactsViewController.m; sourceTree = "<group>"; };
 		BAC7AF681B160ED6E4193DBC /* Pods-ContactsList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsList/Pods-ContactsList.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,8 +111,7 @@
 				823D9D6C1E44DEC500A4494B /* KGContact+Mapping.m */,
 				823D9D6D1E44DEC500A4494B /* KGContactCell.h */,
 				823D9D6E1E44DEC500A4494B /* KGContactCell.m */,
-				823D9D6F1E44DEC500A4494B /* KGContactParametherCell.h */,
-				823D9D701E44DEC500A4494B /* KGContactParametherCell.m */,
+				8273EAE71E487B3000F7090D /* KGContactParametherCells */,
 				823D9D711E44DEC500A4494B /* KGNetworkService.h */,
 				823D9D721E44DEC500A4494B /* KGNetworkService.m */,
 				82EE928E1E44A4C800292291 /* ContactsViewController.h */,
@@ -127,6 +135,21 @@
 				823D9D801E44DF0000A4494B /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8273EAE71E487B3000F7090D /* KGContactParametherCells */ = {
+			isa = PBXGroup;
+			children = (
+				8273EAEF1E488E0A00F7090D /* KGContactCellBuilder.h */,
+				8273EAF01E488E0A00F7090D /* KGContactCellBuilder.m */,
+				8273EAE81E487B8200F7090D /* KGContactLabelCell.h */,
+				8273EAE91E487B8200F7090D /* KGContactLabelCell.m */,
+				823D9D6F1E44DEC500A4494B /* KGContactTextFieldCell.h */,
+				823D9D701E44DEC500A4494B /* KGContactTextFieldCell.m */,
+				8273EAEB1E48800300F7090D /* KGContactPasswordCell.h */,
+				8273EAEC1E48800300F7090D /* KGContactPasswordCell.m */,
+			);
+			name = KGContactParametherCells;
 			sourceTree = "<group>";
 		};
 		FAE6BA2352ACA232F6F0950B /* Pods */ = {
@@ -284,8 +307,11 @@
 				823D9D741E44DEC500A4494B /* AppDelegate.m in Sources */,
 				82EE92901E44A4C800292291 /* ContactsViewController.m in Sources */,
 				823D9D7C1E44DEC500A4494B /* KGNetworkService.m in Sources */,
+				8273EAED1E48800300F7090D /* KGContactPasswordCell.m in Sources */,
 				823D9D7D1E44DEC500A4494B /* main.m in Sources */,
-				823D9D7B1E44DEC500A4494B /* KGContactParametherCell.m in Sources */,
+				823D9D7B1E44DEC500A4494B /* KGContactTextFieldCell.m in Sources */,
+				8273EAF11E488E0A00F7090D /* KGContactCellBuilder.m in Sources */,
+				8273EAEA1E487B8200F7090D /* KGContactLabelCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

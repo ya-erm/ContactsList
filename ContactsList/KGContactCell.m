@@ -19,6 +19,8 @@
     [super awakeFromNib];
     
     self.photo.layer.cornerRadius = self.photo.frame.size.width/2;
+    
+    self.arrrowImageView.tintColor = [UIColor lightGrayColor];
 }
 
 - (void)configureWithObject:(KGContact *)contact{

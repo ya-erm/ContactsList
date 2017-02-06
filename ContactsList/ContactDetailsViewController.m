@@ -6,14 +6,16 @@
 //  Copyright © 2017 Kilograpp. All rights reserved.
 //
 
-#import "KGContactParametherCell.h"
+#import "KGContactCellBuilder.h"
 #import "ContactDetailsViewController.h"
 
 @interface ContactDetailsViewController ()
 
+
 @end
 
 @implementation ContactDetailsViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,54 +29,21 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 7;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    KGContactParametherCell *cell = [tableView dequeueReusableCellWithIdentifier:[KGContactParametherCell getIdentifier] forIndexPath:indexPath];
-    cell.buttonShowPassword.hidden = YES;
-    NSString *param;
-    NSString *value;
-        switch (indexPath.row) {
-        case 0:
-        param = @"Имя";
-        value = self.contact.firstName;
-//                cell.callBackBlock = {
-//                    self.contact.firstName = value;
-//                }
-        break; case 1:
-        param = @"Фамилия";
-                value = self.contact.lastName;
-//                cell.callBackBlock = {
-//                    self.contact.lastName = value;
-//                }
-        break; case 2:
-        param = @"Возраст";
-        value = self.contact.agesString;
-        break; case 3:
-        param = @"E-mail";
-        value = self.contact.email;
-        cell.valueTextField.textColor = [UIColor blueColor];
-        break; case 4:
-        param = @"Телефон";
-        value = self.contact.phone;
-        cell.valueTextField.textColor = [UIColor blueColor];
-        break; case 5:
-        param = @"Никнейм";
-        value = self.contact.nickname;
-        break; case 6:
-        param = @"Пароль";
-        value = self.contact.password;
-        cell.valueTextField.secureTextEntry = YES;
-        cell.buttonShowPassword.hidden = NO;
-        break;
-                
-    }
-    NSString* key =  @"phone";
-    NSString* phonval = (NSString *)[self.contact valueForKey:key];
-
-    cell.parametherLabel.text = param;
-    cell.valueTextField.placeholder = value;
-    cell.valueTextField.text = value;
-    return cell;
+    NSArray *array = @[ @[@"firstName",  @"Имя",     kTextFieldCellType],
+                        @[@"lastName",   @"Фамилия", kTextFieldCellType],
+                        @[@"agesString", @"Возраст", kLabelCellType],
+                        @[@"email",      @"E-mail",  kLabelCellType],
+                        @[@"phone",      @"Телефон", kLabelCellType],
+                        @[@"nickname",   @"Никнейм", kTextFieldCellType],
+                        @[@"password",   @"Пароль",  kPasswordCellType]
+                      ];
+    NSString *key = array[indexPath.row][0];
+    NSString *title = array[indexPath.row][1];
+    NSString *type = array[indexPath.row][2];
+    
+    return [KGContactCellBuilder tableView:tableView contact:self.contact cellForKey:key title:title type:type];
+    
 }
 
 
@@ -89,10 +58,7 @@
 
 #pragma mark - Actions
 
-- (IBAction)saveAction:(id)sender {
-    
-    //TODO Пам-пам-пам
-    
+- (IBAction)saveAction:(id)sender {    
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
     [realm addObject:self.contact];

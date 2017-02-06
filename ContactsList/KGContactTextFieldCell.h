@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KGContactParametherCell : UITableViewCell
+@interface KGContactTextFieldCell : UITableViewCell
 
 + (NSString*)getIdentifier;
 
-@property (weak, nonatomic) IBOutlet UILabel *parametherLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *valueTextField;
-@property (weak, nonatomic) IBOutlet UIButton *buttonShowPassword;
+@property (weak, nonatomic) IBOutlet UIImageView *arrowImage;
 
-- (IBAction)showwPaswordAction:(id)sender;
+@property (copy, nonatomic) void (^callBackBlock)(NSString *newValue);
+
+- (IBAction)valueEditingDidEndAction:(id)sender;
 
 @end

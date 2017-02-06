@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *arrrowImageView;
+
+
 + (NSString*)getIdentifier;
 
 - (void)configureWithObject:(KGContact*)contact;
