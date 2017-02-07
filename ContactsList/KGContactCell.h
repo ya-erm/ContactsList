@@ -13,17 +13,22 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *photo;
 @property (weak, nonatomic) IBOutlet UILabel *fullNameLabel;
+@property (weak, nonatomic) IBOutlet UITextView *emailTextView;
+@property (weak, nonatomic) IBOutlet UITextView *phoneTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *emailImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *phoneImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *arrrowImageView;
 
 
-+ (NSString*)getIdentifier;
++ (NSString *)getIdentifier;
+
++ (CGFloat)heightWithCollapced:(BOOL)collapsed;
 
 - (void)configureWithObject:(KGContact*)contact;
+- (void)configureWithObject:(KGContact*)contact collapsed:(BOOL)collapsed;
 
 
 @end
 
 
-
-//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:www.myurl.com"]];

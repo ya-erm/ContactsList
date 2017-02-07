@@ -15,6 +15,10 @@
     return @"KGContactCellIdentifier";
 }
 
++ (CGFloat)heightWithCollapced:(BOOL)collapsed {
+    return collapsed ? 60 : 105;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     
@@ -24,8 +28,17 @@
 }
 
 - (void)configureWithObject:(KGContact *)contact{
+    [self configureWithObject:contact collapsed:YES];
+}
+
+- (void)configureWithObject:(KGContact*)contact collapsed:(BOOL)collapsed {
     self.photo.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:contact.photoUrl]]];
     self.fullNameLabel.text = contact.fullName;
+    
+    self.emailTextView.text = contact.email;
+    self.emailImageView.hidden = self.emailTextView.hidden = collapsed;
+    self.phoneTextView.text = contact.phone;
+    self.phoneImageView.hidden = self.phoneTextView.hidden = collapsed;
 }
 
 @end

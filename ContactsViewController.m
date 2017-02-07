@@ -13,11 +13,12 @@
 
 static NSString *const kShowContactDetailsSegueIdentifier = @"showContactDetailsSegueIdentifier";
 
-@interface ContactsViewController () <UISearchResultsUpdating, UISearchBarDelegate>
+@interface ContactsViewController () <UISearchResultsUpdating, UISearchBarDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) RLMResults *contacts;
 @property (nonatomic, strong) RLMNotificationToken *token;
 @property (nonatomic, strong) UISearchController* searchController;
+@property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @property (nonatomic, assign) BOOL shouldShowSearchResults;
 
@@ -56,16 +57,22 @@ static NSString *const kShowContactDetailsSegueIdentifier = @"showContactDetails
     } else {
         self.shouldShowSearchResults = NO;
     }
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstName CONTAINS %@ OR lastName CONTAINS %@", searchString, searchString];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstName CONTAINS[c] %@ OR lastName CONTAINS[c] %@", searchString, searchString];
     self.contacts = [KGContact objectsWithPredicate:predicate];
     [self.tableView reloadData];
-    
+    [self setupToken];
 }
 
 - (void)loadContacts{
-    
     self.contacts = [KGContact allObjects];
-    
+    [self setupToken];
+}
+
+- (void)setupToken {
+    if (self.token) {
+        [self.token stop];
+        self.token = nil;
+    }
     __weak typeof(self) wself = self;
     self.token = [self.contacts addNotificationBlock:^(RLMResults<KGContact *> * _Nullable results, RLMCollectionChange * _Nullable change, NSError * _Nullable error) {
         [wself.tableView beginUpdates];
@@ -112,18 +119,30 @@ static NSString *const kShowContactDetailsSegueIdentifier = @"showContactDetails
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     KGContactCell *cell = [tableView dequeueReusableCellWithIdentifier:[KGContactCell getIdentifier] forIndexPath:indexPath];
-        [cell configureWithObject:self.contacts[indexPath.row]];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell configureWithObject:self.contacts[indexPath.row] collapsed:(indexPath != self.selectedIndexPath)];
+    UILongPressGestureRecognizer *longPressRecognizer  = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    longPressRecognizer.delegate = self;
+    longPressRecognizer.delaysTouchesBegan = YES;
+    [cell addGestureRecognizer:longPressRecognizer];
     return cell;
 }
 
+-(void)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan) {
+        return;
+    }
+    CGPoint point = [gestureRecognizer locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    [self performSegueWithIdentifier:kShowContactDetailsSegueIdentifier sender:self.contacts[indexPath.row]];
+}
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
 
 
-#pragma mark - UITableViewDataDelegate
+#pragma mark - UITableViewDelegate
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewRowAction* deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Удалить" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
@@ -136,16 +155,34 @@ static NSString *const kShowContactDetailsSegueIdentifier = @"showContactDetails
     return @[deleteAction];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-     [self performSegueWithIdentifier:kShowContactDetailsSegueIdentifier sender:self.contacts[indexPath.row]];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [KGContactCell heightWithCollapced:(indexPath != self.selectedIndexPath)];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //[self performSegueWithIdentifier:kShowContactDetailsSegueIdentifier sender:self.contacts[indexPath.row]];
+    
+    //[(KGContactCell*)[self.tableView cellForRowAtIndexPath:self.selectedIndexPath] configureWithObject:self.contacts[self.selectedIndexPath.row] collapsed:YES];
+    NSIndexPath* oldIndexPath = self.selectedIndexPath;
+    self.selectedIndexPath = indexPath;
+    NSMutableArray* indexPaths = [[NSMutableArray alloc] initWithCapacity:2];
+    [indexPaths addObject:self.selectedIndexPath];
+    if (oldIndexPath) {
+        [indexPaths addObject:oldIndexPath];
+    }
+    //[(KGContactCell*)[self.tableView cellForRowAtIndexPath:indexPath] configureWithObject:self.contacts[indexPath.row] collapsed:NO];
+//    __weak typeof(self)wSelf = self;
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.tableView beginUpdates];
+        [self.tableView reloadRowsAtIndexPaths: indexPaths withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+    }];
+//    [self.tableView reloadData];
+}
 #pragma mark - Navigation
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
     [self.searchController setActive:NO];
-    
     if ([segue.identifier isEqualToString:kShowContactDetailsSegueIdentifier]) {
         ContactDetailsViewController *controller = segue.destinationViewController;
         controller.contact = sender;
@@ -155,6 +192,7 @@ static NSString *const kShowContactDetailsSegueIdentifier = @"showContactDetails
 #pragma mark - UISearchResultsUpdating
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    self.selectedIndexPath = nil;
     [self searchContacts];
 }
 
